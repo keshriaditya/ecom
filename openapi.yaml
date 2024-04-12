@@ -1,0 +1,33 @@
+openapi: 3.0.1
+info:
+  title: Simple eCommerce API
+  version: 1.0.0
+  description: An API for retrieving product data in a simple eCommerce application.
+servers:
+  - url: http://localhost:3001
+paths:
+  /api/products:
+    get:
+      summary: Get Products
+      description: Retrieve a list of products.
+      responses:
+        '200':
+          description: A list of products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The unique identifier for the product.
+                    name:
+                      type: string
+                      description: The name of the product.
+                    price:
+                      type: number
+                      format: float
+                      description: The price of the product.
+      # Optional: Add security definitions if authentication is required
